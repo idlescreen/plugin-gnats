@@ -1,0 +1,47 @@
+[package]
+license = "Apache-2.0"
+name = "gnats"
+version = "1.0.27"
+edition = "2024"
+description = "Predator-prey firefly swarm"
+publish = false
+autobins = false
+
+[lib]
+name = "screensaver_gnats"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+trance-api = { path = "../idlescreen/trance-api" }
+libc = "0.2"
+
+[build-dependencies]
+embed-resource = "2"
+
+[package.metadata.deb]
+name = "trance-plugin-gnats"
+maintainer = "idlescreen <jerydleuck@gmail.com>"
+extended-description = "Predator-prey firefly swarm. Official IdleScreen (Trance) screensaver plugin."
+depends = "libc6"
+section = "utils"
+priority = "optional"
+assets = [
+    ["target/release/libscreensaver_gnats.so", "usr/libexec/trance/screensavers/libscreensaver_gnats.so", "644"],
+    ["assets/trance-gnats.png", "usr/share/pixmaps/trance-gnats.png", "644"]
+]
+
+[package.metadata.generate-rpm]
+name = "trance-plugin-gnats"
+release = "1"
+arch = "x86_64"
+summary = "Predator-prey firefly swarm"
+description = "Predator-prey firefly swarm"
+license = "Apache-2.0"
+assets = [
+    { source = "target/release/libscreensaver_gnats.so", dest = "/usr/libexec/trance/screensavers/libscreensaver_gnats.so", mode = "644", user = "root", group = "root" },
+    { source = "assets/trance-gnats.png", dest = "/usr/share/pixmaps/trance-gnats.png", mode = "644", user = "root", group = "root" }
+]
+
+[package.metadata.generate-rpm.requires]
+trance = "*"

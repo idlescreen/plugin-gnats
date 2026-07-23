@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Gnats
+Comment=Screensaver effect: gnats
+Exec=trance preview gnats
+Icon=trance-gnats
+Terminal=false
+Categories=Screensaver;
