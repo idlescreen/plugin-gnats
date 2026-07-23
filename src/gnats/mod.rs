@@ -53,7 +53,7 @@ impl Default for Gnats {
 
 impl Gnats {
     pub fn new() -> Self {
-        let rng = LcgRng::new_random();
+        let rng = LcgRng::from_env_or_random();
         let sys = get_system_info();
         let on_battery = sys.power_status.contains("Battery");
         let accent = query_current_palette().accent;
