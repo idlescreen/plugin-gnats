@@ -1,10 +1,10 @@
 # plugin-gnats
 
-Official **gnats** visualizer plugin for [IdleScreen](https://github.com/idlescreen/idlescreen) (Trance daemon).
+Official **gnats** visualizer plugin for [IdleScreen](https://github.com/idlescreen/idlescreen).
 
 ## Build
 
-Requires a sibling checkout of the daemon for `trance-api`:
+Requires a sibling checkout of the core daemon for `trance-api`:
 
 ```bash
 git clone https://github.com/idlescreen/idlescreen.git
