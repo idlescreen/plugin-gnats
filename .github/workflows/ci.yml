@@ -21,8 +21,11 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout IdleScreen (trance-api)
-        run: git clone --depth 1 https://github.com/idlescreen/idlescreen.git ../idlescreen
+      - name: Checkout idle engine (path deps)
+        uses: actions/checkout@v4
+        with:
+          repository: idlescreen/idle
+          path: idle
       - name: Install Rust
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain none

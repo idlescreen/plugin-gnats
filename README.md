@@ -1,15 +1,15 @@
 # saver-gnats
 
-Official **gnats** visualizer plugin for [IdleScreen](https://github.com/idlescreen/idle-core).
+Official **gnats** visualizer plugin for [IdleScreen](https://github.com/idlescreen/idle).
 
 ## Build
 
-Requires a sibling checkout of the core daemon for `idle-api`:
+Requires the idle engine checked out into `./idle` for `idle-api` path deps:
 
 ```bash
-git clone https://github.com/idlescreen/idle-core.git
-git clone https://github.com/idlescreen/saver-gnats.git
-cd saver-gnats
+git clone https://github.com/idlescreen/idle-saver-gnats.git
+cd idle-saver-gnats
+git clone https://github.com/idlescreen/idle.git idle
 cargo build --release
 ```
 
