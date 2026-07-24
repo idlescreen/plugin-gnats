@@ -20,7 +20,7 @@ libc = "0.2"
 embed-resource = "2"
 
 [package.metadata.deb]
-name = "saver-gnats"
+name = "idle-saver-gnats"
 provides = "trance-plugin-gnats"
 replaces = "trance-plugin-gnats"
 conflicts = "trance-plugin-gnats (<< 2.0.0)"
@@ -35,19 +35,19 @@ assets = [
 ]
 
 [package.metadata.generate-rpm]
-name = "saver-gnats"
+name = "idle-saver-gnats"
 release = "1"
 arch = "x86_64"
 summary = "Predator-prey firefly swarm"
 description = "Predator-prey firefly swarm"
 license = "Apache-2.0"
 assets = [
-    { source = "target/release/libscreensaver_gnats.so", dest = "/usr/libexec/idlescreen/screensavers/libscreensaver_gnats.so", mode = "644", user = "root", group = "root" },
+    { source = "target/release/libscreensaver_gnats.so", dest = "/usr/libexec/idle/screensavers/libscreensaver_gnats.so", mode = "644", user = "root", group = "root" },
     { source = "assets/idlescreen-gnats.png", dest = "/usr/share/pixmaps/idlescreen-gnats.png", mode = "644", user = "root", group = "root" }
 ]
 
 [package.metadata.generate-rpm.requires]
-idlescreen = "*"
+idle = "*"
 
 [package.metadata.generate-rpm.provides]
 trance-plugin-gnats = "*"
