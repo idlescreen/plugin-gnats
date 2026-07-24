@@ -1,7 +1,7 @@
 [package]
 license = "Apache-2.0"
 name = "gnats"
-version = "1.0.27"
+version = "2.0.0"
 edition = "2024"
 description = "Predator-prey firefly swarm"
 publish = false
@@ -20,28 +20,37 @@ libc = "0.2"
 embed-resource = "2"
 
 [package.metadata.deb]
-name = "trance-plugin-gnats"
+name = "saver-gnats"
+provides = "trance-plugin-gnats"
+replaces = "trance-plugin-gnats"
+conflicts = "trance-plugin-gnats (<< 2.0.0)"
 maintainer = "idlescreen <jerydleuck@gmail.com>"
 extended-description = "Predator-prey firefly swarm. Official IdleScreen (Trance) screensaver plugin."
 depends = "libc6"
 section = "utils"
 priority = "optional"
 assets = [
-    ["target/release/libscreensaver_gnats.so", "usr/libexec/trance/screensavers/libscreensaver_gnats.so", "644"],
-    ["assets/trance-gnats.png", "usr/share/pixmaps/trance-gnats.png", "644"]
+    ["target/release/libscreensaver_gnats.so", "usr/libexec/idlescreen/screensavers/libscreensaver_gnats.so", "644"],
+    ["assets/idlescreen-gnats.png", "usr/share/pixmaps/idlescreen-gnats.png", "644"]
 ]
 
 [package.metadata.generate-rpm]
-name = "trance-plugin-gnats"
+name = "saver-gnats"
 release = "1"
 arch = "x86_64"
 summary = "Predator-prey firefly swarm"
 description = "Predator-prey firefly swarm"
 license = "Apache-2.0"
 assets = [
-    { source = "target/release/libscreensaver_gnats.so", dest = "/usr/libexec/trance/screensavers/libscreensaver_gnats.so", mode = "644", user = "root", group = "root" },
-    { source = "assets/trance-gnats.png", dest = "/usr/share/pixmaps/trance-gnats.png", mode = "644", user = "root", group = "root" }
+    { source = "target/release/libscreensaver_gnats.so", dest = "/usr/libexec/idlescreen/screensavers/libscreensaver_gnats.so", mode = "644", user = "root", group = "root" },
+    { source = "assets/idlescreen-gnats.png", dest = "/usr/share/pixmaps/idlescreen-gnats.png", mode = "644", user = "root", group = "root" }
 ]
 
 [package.metadata.generate-rpm.requires]
-trance = "*"
+idlescreen = "*"
+
+[package.metadata.generate-rpm.provides]
+trance-plugin-gnats = "*"
+
+[package.metadata.generate-rpm.obsoletes]
+trance-plugin-gnats = "*"
