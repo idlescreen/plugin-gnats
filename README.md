@@ -4,7 +4,7 @@ Official **gnats** visualizer plugin for [IdleScreen](https://github.com/idlescr
 
 ## Build
 
-Requires a sibling checkout of the core daemon for `trance-api`:
+Requires a sibling checkout of the core daemon for `idle-api`:
 
 ```bash
 git clone https://github.com/idlescreen/idle-core.git
@@ -18,8 +18,8 @@ cargo build --release
 After adding the IdleScreen package repository:
 
 ```bash
-sudo apt install trance-saver-gnats
-# or: sudo dnf install trance-saver-gnats
+sudo apt install idle-saver-gnats
+# or: sudo dnf install idle-saver-gnats
 ```
 
 See [idlescreen.github.io/packages](https://idlescreen.github.io/packages/).
